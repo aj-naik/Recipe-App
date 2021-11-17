@@ -1,7 +1,10 @@
 @import-normalize;
 @import 'RecipeList.css'; 
 @import 'buttons.css';
-@import url('https://fonts.googleapis.com/css?family=Montserrat');
+@import 'Recipe.css'; 
+@import 'IngredientList.css';
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&family=Roboto:wght@300;400;500&display=swap');
 
 body {
     background: linear-gradient(135deg,#AE8FC8, #d283ba, #FE4d45);
@@ -15,5 +18,9 @@ html {
 }
 
 *, *::before, *::after {
-    font-family: 'Montserrat', cursive;
+    font-family: 'Roboto' !important;
+}
+
+.mr-1 {
+    margin-right: 5px;
 }

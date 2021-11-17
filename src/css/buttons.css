@@ -15,5 +15,14 @@
 }
 
 .btn--primary:hover{
-    background-color:#f79cda;
+    background-color:#f79cb7;
+}
+
+.btn--danger {
+    color: black;
+    background-color: rgb(250, 106, 106);
+}
+.btn--danger:hover {
+    color: black;
+    background-color: rgb(253, 59, 59);
 }
