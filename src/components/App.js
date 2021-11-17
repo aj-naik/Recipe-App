@@ -1,17 +1,50 @@
-import React from "react";
+import React, { useState } from "react";
 import RecipeList from "./RecipeList";
 import '../css/App.css'
+import { v4 as uuidv4 } from 'uuid';
 
 function App() {
+  const [recipes, setRecipes] = useState(sampleRecipes)
+
+  // function to add/edit new recipes
+  function handleRecipeAdd() {
+    const newRecipe = {
+      id: uuidv4(),
+      name: 'New',
+      servings: 1,
+      cookTime: '1:00',
+      instructions: 'Instructions',
+      ingredients: [
+        {
+          id: uuidv4(),
+          name: 'Name',
+          amount: '1 Tbs'
+        }
+      ]
+    }
+
+    // ... is spread operator which iterates over the data and the comma after that will append new data to original data
+    setRecipes([...recipes, newRecipe])
+  }
+
+  // function to delete recipes
+  function handleRecipeDelete(id){
+    setRecipes(recipes.filter(recipe => recipe.id !== id))
+  }
+  
   return (
-    <RecipeList recipes ={sampleRecipes} />
+    <RecipeList 
+      recipes = {recipes} 
+      handleRecipeAdd = {handleRecipeAdd}
+      handleRecipeDelete = {handleRecipeDelete}
+    />
     
   );
 }
 
 const sampleRecipes = [
   {
-    id: 1,
+    id: uuidv4(),
     name: 'Plain Chicken',
     servings: 3,
     cookTime: '0:45',
@@ -30,7 +63,7 @@ const sampleRecipes = [
     ]
   },
   {
-    id: 2,
+    id: uuidv4(),
     name: 'Plain Pork',
     servings: 3,
     cookTime: '1:45',
