@@ -1,0 +1,19 @@
+@import-normalize;
+@import 'RecipeList.css'; 
+@import 'buttons.css';
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+
+body {
+    background: linear-gradient(135deg,#AE8FC8, #d283ba, #FE4d45);
+    background-size: 100% 200%;
+    padding: 0;
+    margin: 0;
+  }
+
+html {
+    font-size: 20px;
+}
+
+*, *::before, *::after {
+    font-family: 'Montserrat', cursive;
+}

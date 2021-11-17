@@ -1,5 +1,6 @@
 import React from "react";
-import RecipeList from "./components/RecipeList";
+import RecipeList from "./RecipeList";
+import '../css/App.css'
 
 function App() {
   return (

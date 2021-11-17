@@ -1,0 +1,19 @@
+.btn {
+    background: none;
+    border: none;
+    outline: none;
+    font-weight: bold;
+    font-size: inherit;
+    border-radius: 30px;
+    padding: 5px 20px;
+    cursor: pointer;
+}
+
+.btn--primary{
+    color: black;
+    background-color: #eea0d5;
+}
+
+.btn--primary:hover{
+    background-color:#f79cda;
+}
