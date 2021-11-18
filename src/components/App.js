@@ -3,8 +3,16 @@ import RecipeList from "./RecipeList";
 import '../css/App.css'
 import { v4 as uuidv4 } from 'uuid';
 
+export const RecipeContext = React.createContext()
+
 function App() {
   const [recipes, setRecipes] = useState(sampleRecipes)
+
+  const recipeContectValue = {
+    // This creates Object of function and Can also be written as handleRecipeAdd:handleRecipeAdd. The shorthand method works only when both key value names are supposed to be same
+    handleRecipeAdd ,
+    handleRecipeDelete
+  }
 
   // function to add/edit new recipes
   function handleRecipeAdd() {
@@ -33,11 +41,11 @@ function App() {
   }
   
   return (
-    <RecipeList 
+    <RecipeContext.Provider value = {recipeContectValue}>
+      <RecipeList 
       recipes = {recipes} 
-      handleRecipeAdd = {handleRecipeAdd}
-      handleRecipeDelete = {handleRecipeDelete}
     />
+    </RecipeContext.Provider>
     
   );
 }
