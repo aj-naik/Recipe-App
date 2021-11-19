@@ -1,10 +1,9 @@
 @import-normalize;
 @import 'RecipeList.css'; 
-@import 'buttons.css';
+@import 'Buttons.css';
 @import 'Recipe.css'; 
 @import 'IngredientList.css';
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&family=Roboto:wght@300;400;500&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap");
 
 body {
     background: white;
@@ -18,7 +17,8 @@ html {
 }
 
 *, *::before, *::after {
-    font-family: 'Roboto' !important;
+    font-family: "Montserrat", cursive;
+    box-sizing: border-box;
 }
 
 .mr-1 {
