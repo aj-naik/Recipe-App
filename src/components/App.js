@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import RecipeList from "./RecipeList";
 import RecipeEdit from "./RecipeEdit";
 import '../css/App.css'
+
 import { v4 as uuidv4 } from 'uuid';
 
 export const RecipeContext = React.createContext()
@@ -9,6 +10,8 @@ const LOCAL_STORAGE_KEY = 'cookingWithReact.recipes'
 
 function App() {
   const [recipes, setRecipes] = useState(sampleRecipes)
+  const [selectedRecipeId, setSelectedRecipeId] = useState();
+  const selectedRecipe = recipes.find((recipe) => recipe.id === selectedRecipeId);
 
   // useEffect will store and get data to and from local storage. 1st useEffect will check if data is stored and then fetch that data otherwise it will fetch default. 2nd useEffect will store/update new data to local storage
   useEffect(() => {
@@ -20,10 +23,15 @@ function App() {
     localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(recipes))
   }, [recipes])
 
-  const recipeContectValue = {
+  const recipeContextValue = {
     // This creates Object of function and Can also be written as handleRecipeAdd:handleRecipeAdd. The shorthand method works only when both key value names are supposed to be same
     handleRecipeAdd ,
-    handleRecipeDelete
+    handleRecipeDelete , 
+    handleRecipeSelect,
+  }
+
+  function handleRecipeSelect(id) {
+    setSelectedRecipeId(id);
   }
 
   // function to add/edit new recipes
@@ -49,13 +57,13 @@ function App() {
 
   // function to delete recipes
   function handleRecipeDelete(id){
-    setRecipes(recipes.filter(recipe => recipe.id !== id))
+   setRecipes(recipes.filter((recipe) => recipe.id !== id));
   }
   
   return (
-    <RecipeContext.Provider value = {recipeContectValue}>
-      <RecipeList recipes = {recipes}/>
-      <RecipeEdit />
+    <RecipeContext.Provider value={recipeContextValue}>
+      <RecipeList recipes={recipes} />
+      {selectedRecipe && <RecipeEdit recipe={selectedRecipe} />}
     </RecipeContext.Provider>
     
   );
