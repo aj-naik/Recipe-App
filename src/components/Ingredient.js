@@ -1,10 +1,11 @@
 import React from 'react'
 
-export default function Ingredient({name, amount}) {
+export default function Ingredient(props) {
+    const {name, amount} = props
     return (
         <>
-            <span>{name}</span>
-            <span>{amount}</span>
+           <span>{name}</span> 
+           <span>{amount}</span> 
         </>
     )
 }
