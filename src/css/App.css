@@ -4,13 +4,14 @@
 @import 'Recipe.css'; 
 @import 'IngredientList.css';
 @import 'RecipeEdit.css';
+@import 'SearchBox.css';
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap");
 
 body {
-    background: white;
-    background-size: 100% 200%;
     padding: 0;
     margin: 0;
+    background: linear-gradient(-45deg, #dd46d1, #a8f4fa);
+    background-size: 100% 200%;
   }
 
 html {
