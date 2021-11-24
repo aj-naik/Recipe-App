@@ -28,6 +28,7 @@ function App() {
     handleRecipeAdd ,
     handleRecipeDelete , 
     handleRecipeSelect,
+    handleRecipeChange,
   }
 
   function handleRecipeSelect(id) {
@@ -53,6 +54,14 @@ function App() {
 
     // ... is spread operator which iterates over the data and the comma after that will append new data to original data
     setRecipes([...recipes, newRecipe])
+  }
+
+  //function to edit recipes
+  function handleRecipeChange(id, recipe) {
+    const newRecipes = [...recipes]
+    const index = newRecipes.findIndex(r => r.id === id)
+    newRecipes[index] = recipe
+    setRecipes(newRecipes)
   }
 
   // function to delete recipes
