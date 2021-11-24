@@ -4,6 +4,7 @@ import RecipeEdit from "./RecipeEdit";
 import "../css/App.css";
 
 import { v4 as uuidv4 } from "uuid";
+import { SearchBox } from "./SearchBox";
 
 export const RecipeContext = React.createContext();
 const LOCAL_STORAGE_KEY = "cookingWithReact.recipes";
@@ -77,6 +78,7 @@ function App() {
 
   return (
     <RecipeContext.Provider value={recipeContextValue}>
+      <SearchBox placeholder = "Search by Name, Food Type, etc"/>
       <RecipeList recipes={recipes} />
       {selectedRecipe && <RecipeEdit recipe={selectedRecipe} />}
     </RecipeContext.Provider>
