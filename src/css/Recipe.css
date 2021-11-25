@@ -3,9 +3,16 @@
     padding-bottom: 40px;
     border-bottom: 1px solid black;
     border-radius: 20px;
-    background: linear-gradient(-135deg,#AE8FC8, #d283ba);
     background-size: 100% 200%;
-    margin: 20px;
+    margin-right: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 15px;
+    background-color: rgba(255, 255, 255, 0.616);
+    background-size: 100% 200%;
+    backdrop-filter: blur(16px) saturate(120%);
+    border: rgba(255, 255, 255, 0.459) solid 1px;
+    box-shadow: 0px 0px 50px rgba(0, 0, 0, 0.144);
 }
  
 .recipe:last-child{

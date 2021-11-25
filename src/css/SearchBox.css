@@ -1,9 +1,10 @@
 .search{
     -webkit-appearance: none;
-    width: 49%;
+    width: 47%;
     line-height: 30px;
     padding: 5px 15px;
     margin-top: 15px;
+    margin-left: 20px;
     display: flex;
     align-items: center;
     justify-content: center;
